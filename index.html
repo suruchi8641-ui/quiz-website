@@ -1,1 +1,144 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Test your knowledge with QuizMaster, an interactive online quiz website.">
+  <title>QuizMaster | Online Quiz</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="QuizMaster home">
+      <span class="brand-icon">Q</span>
+      QuizMaster
+    </a>
+    <span class="header-tag">Test Your Knowledge</span>
+  </header>
+
+  <main class="container">
+    <section class="welcome" id="welcome">
+      <span class="eyebrow">LEARN • PRACTICE • IMPROVE</span>
+      <h1>Challenge Your <span>Knowledge.</span></h1>
+      <p>Answer questions, track your score, and discover how much you know.</p>
+
+      <div class="setup-card">
+        <label for="category">Choose a quiz category</label>
+        <select id="category">
+          <option value="all">Mixed Web Development</option>
+          <option value="HTML">HTML</option>
+          <option value="CSS">CSS</option>
+          <option value="JavaScript">JavaScript</option>
+        </select>
+
+        <label for="difficulty">Choose difficulty</label>
+        <select id="difficulty">
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+
+        <button id="start-btn" class="primary-btn">
+          Start Quiz <span aria-hidden="true">→</span>
+        </button>
+        <p class="small-note">Multiple-choice questions • Timed challenge</p>
+      </div>
+    </section>
+
+    <section class="quiz-card" id="quiz-screen" hidden>
+      <div class="quiz-top">
+        <span id="question-count">Question 1 of 10</span>
+        <span id="score-display">Score: 0</span>
+      </div>
+
+      <div class="progress-track"
+           role="progressbar"
+           aria-label="Quiz progress"
+           aria-valuemin="0"
+           aria-valuemax="100"
+           aria-valuenow="0"
+           id="progress-track">
+        <div id="progress-bar"></div>
+      </div>
+
+      <div class="quiz-meta">
+        <span id="category-label">HTML</span>
+        <span id="timer" aria-live="polite">20s</span>
+      </div>
+
+      <h2 id="question-text">Question appears here</h2>
+      <div id="options" class="options"></div>
+
+      <p id="feedback" aria-live="polite"></p>
+
+      <div class="quiz-footer">
+        <span id="answered-count">0 answered</span>
+        <button id="next-btn" class="primary-btn" disabled>
+          Next Question →
+        </button>
+      </div>
+    </section>
+
+    <section class="result-card" id="result-screen" hidden>
+      <div class="result-icon" aria-hidden="true">🏆</div>
+      <span class="eyebrow">QUIZ COMPLETED</span>
+      <h2 id="result-heading">Great work!</h2>
+      <p id="result-message">Here is your final result.</p>
+
+      <div class="result-score">
+        <span>Your Score</span>
+        <strong id="final-score">0/10</strong>
+        <span id="final-percentage">0%</span>
+      </div>
+
+      <div class="result-stats">
+        <div>
+          <strong id="correct-count">0</strong>
+          <span>Correct</span>
+        </div>
+        <div>
+          <strong id="wrong-count">0</strong>
+          <span>Incorrect / Skipped</span>
+        </div>
+        <div>
+          <strong id="best-score">0%</strong>
+          <span>Best Score</span>
+        </div>
+      </div>
+
+      <button id="restart-btn" class="primary-btn">Try Again ↻</button>
+      <button id="home-btn" class="secondary-btn">Back to Home</button>
+    </section>
+
+    <section class="history-card" id="history-card">
+      <div class="history-heading">
+        <div>
+          <span class="eyebrow">YOUR ACTIVITY</span>
+          <h2>Recent Results</h2>
+        </div>
+        <button id="clear-history-btn" class="text-btn">Clear history</button>
+      </div>
+      <div id="history-list">
+        <p class="empty-history">Complete a quiz to see your results here.</p>
+      </div>
+      <p class="storage-note">Results are saved in this browser on this device.</p>
+    </section>
+
+    <section class="tips">
+      <h2>How to play</h2>
+      <div class="tips-grid">
+        <div><span>01</span><h3>Choose</h3><p>Select a topic and difficulty.</p></div>
+        <div><span>02</span><h3>Answer</h3><p>Choose the correct option before time runs out.</p></div>
+        <div><span>03</span><h3>Improve</h3><p>Check your results and try again.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>QuizMaster © 2026 · Built with HTML, CSS & JavaScript</p>
+  </footer>
+</body>
+</html>
+
